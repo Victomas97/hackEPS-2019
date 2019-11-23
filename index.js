@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var dates = [] ;
+var dades = [] ;
 
 
 app.post('/', function (req, res) {
