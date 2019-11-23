@@ -39,5 +39,6 @@ class postData(Resource):
 api.add_resource(Hello, '/hello/<name>')
 api.add_resource(getAllData, '/getAllData')
 api.add_resource(postData, '/postData')
+
 if __name__ == '__main__':
- app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
