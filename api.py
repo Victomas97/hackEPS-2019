@@ -9,9 +9,6 @@ api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('task')
 
-class Hello(Resource):
-    def get(self, name):
-        return {"Hello":name}
 '''[]'''
 class getAllData(Resource):
     def get(self):
@@ -29,15 +26,10 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
-        print("hola dani")
         args = parser.parse_args()
         print(args)
-        todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
-        todo_id = 'todo%i' % todo_id
-        TODOS[todo_id] = {'task': args['task']}
-        return TODOS[todo_id], 201
+        return "ok"
 
-api.add_resource(Hello, '/hello/<name>')
 api.add_resource(getAllData, '/getAllData')
 api.add_resource(postData, '/postData')
 
