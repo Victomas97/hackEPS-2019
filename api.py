@@ -26,17 +26,12 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
-        return {"data":[
-                    {"temperature":29,
-                    "humity": 50,
-                    "time":"07:30"},
-                    {"temperature":25,
-                    "humity": 80,
-                    "time":"08:30"},
-                    {"temperature":20,
-                    "humity": 20,
-                    "time":"09:30"},
-                ]}
+        args = parser.parse_args()
+        print(args)
+        todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
+        todo_id = 'todo%i' % todo_id
+        TODOS[todo_id] = {'task': args['task']}
+        return TODOS[todo_id], 201
 
 api.add_resource(Hello, '/hello/<name>')
 api.add_resource(getAllData, '/getAllData')
