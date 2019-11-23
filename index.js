@@ -2,11 +2,11 @@ var express = require('express');
 var bodyParser     =        require("body-parser");
 var app = express();
 var dades = [] ;
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-app.post('/', function (req, res) {
+app.post('handle',function(request,response){
     console.log(req.body);
     dades.push(
         {
