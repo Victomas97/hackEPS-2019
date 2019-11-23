@@ -1,10 +1,11 @@
 var express = require('express');
+var bodyParser     =        require("body-parser");
 var app = express();
 var dades = [] ;
 
 
 app.post('/', function (req, res) {
-    console.log(req);
+    console.log(req.body.temperatura);
     dades.push(
         {
             temperatura: req.query.temperatura,
