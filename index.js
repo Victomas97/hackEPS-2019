@@ -1,28 +1,18 @@
-var express = require('express');
-var bodyParser     =        require("body-parser");
-var app = express();
-var dades = [] ;
-app.use(bodyParser.urlencoded({ extended: true }));
+var express        =         require("express");
+var bodyParser     =         require("body-parser");
+var app            =         express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/',function(req,res){
+});
 
-app.post('/',function(req,res){
+app.post('/temp',function(req,res){
     console.log(req.body);
-    dades.push(
-        {
-            temperatura: req.query.temperatura,
-            humitat: req.query.humitat
-        });
-    res.send("data saved");
+    res.end("yes");
 });
 
-app.get('/', function (req, res) {
-    res.send(dades);
-});
-
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!');
-});
-
-
-
+app.listen(8080,function(){
+    console.log("Started on PORT 8080");
+})
