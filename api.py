@@ -23,7 +23,7 @@ class getAllData(Resource):
 
 @app.route("/postData", methods=['POST'])
 def postData():
-    print(request.get_json())
+    print(request.json
     return "ok"
 api.add_resource(getAllData, '/getAllData')
 
