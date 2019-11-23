@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-app.post('handle',function(request,response){
+app.post('/',function(req,res){
     console.log(req.body);
     dades.push(
         {
