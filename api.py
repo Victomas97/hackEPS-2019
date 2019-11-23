@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-'''[]'''
+'''[]@'''
 class getAllData(Resource):
     def get(self):
         return {"data":[
@@ -21,13 +21,11 @@ class getAllData(Resource):
                     "time":"09:30"},
                 ]}
 
-class postData(Resource):
-    def post(self):
-        print(request.json)
-        return "ok"
+@app.route("/postData", methods=['POST'])
+def postData():
+    print(request.get_json())
 
 api.add_resource(getAllData, '/getAllData')
-api.add_resource(postData, '/postData')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
