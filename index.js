@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 
 app.post('/', function (req, res) {
-    console.log(req.body.temperatura);
+    console.log(req.body);
     dades.push(
         {
             temperatura: req.query.temperatura,
