@@ -26,6 +26,7 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
+        print("hola dani")
         args = parser.parse_args()
         print(args)
         todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
