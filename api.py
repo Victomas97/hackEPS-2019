@@ -7,7 +7,7 @@ CORS(app)
 api = Api(app)
 
 parser = reqparse.RequestParser()
-parser.add_argument('task')
+parser.add_argument('data')
 
 '''[]'''
 class getAllData(Resource):
