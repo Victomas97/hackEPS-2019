@@ -1,13 +1,12 @@
 from flask import Flask
-from flask_restful import Resource, Api
 
 app = Flask(__name__)
-api = Api(app)
 
-class Hello(Resource):
-    def get(self, name):
-        return {"Hello":name}
+@app.route("/")
+def home():
+    return "Hello, World!"
 '''[]'''
+'''
 class getAllData(Resource):
     def get(self):
         return {"data":[
@@ -25,9 +24,10 @@ class getAllData(Resource):
 api.add_resource(Hello, '/hello/<name>')
 api.add_resource(getAllData, '/getAllData')
 '''
+'''
 getallData
 
 postdata
 '''
 if __name__ == '__main__':
- app.run(port=8080)
+    app.run(host='0.0.0.0',debug=True)
