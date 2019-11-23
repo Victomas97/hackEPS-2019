@@ -6,9 +6,6 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-parser = reqparse.RequestParser()
-parser.add_argument('data')
-
 '''[]'''
 class getAllData(Resource):
     def get(self):
@@ -26,8 +23,7 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
-        args = parser.parse_args('data')
-        print(args)
+        print(request.json)
         return "ok"
 
 api.add_resource(getAllData, '/getAllData')
