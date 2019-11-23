@@ -4,7 +4,7 @@ var dades = [] ;
 
 
 app.post('/', function (req, res) {
-    console.log(req.query);
+    console.log(req.body);
     dades.push(
         {
             temperatura: req.query.temperatura,
