@@ -8,8 +8,10 @@ class Hello(Resource):
     def get(self, name):
         return {"Hello":name}
 '''[]'''
-class getAllData(Resource):
-    def get(self):
+@app.route('/data', methods = ['GET', 'POST'])
+
+def data(self):
+    if request.method == 'GET':
         return {"data":[
                     {"temperature":29,
                     "humity": 50,
@@ -23,7 +25,6 @@ class getAllData(Resource):
                 ]}
 
 api.add_resource(Hello, '/hello/<name>')
-api.add_resource(getAllData, '/getAllData')
 '''
 getallData
 
