@@ -26,7 +26,7 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
-        args = parser.parse_args()
+        args = parser.parse_args('data')
         print(args)
         return "ok"
 
