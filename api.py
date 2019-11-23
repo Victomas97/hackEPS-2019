@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from flask_cors import CORS
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/app/*": {"origins": "*"}})
 
 app = Flask(__name__)
 api = Api(app)
