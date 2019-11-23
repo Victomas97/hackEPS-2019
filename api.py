@@ -23,7 +23,7 @@ class getAllData(Resource):
 
 class postData(Resource):
     def post(self):
-        print(json.dumps(request))
+        print(request)
         return "ok"
 
 api.add_resource(getAllData, '/getAllData')
