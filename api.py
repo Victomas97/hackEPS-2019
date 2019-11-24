@@ -46,7 +46,7 @@ class controlTemp(Resource):
 def postTemperature():
     print(request.json['temperature'])
     f=open("termostato.txt", "w+")
-    f.write(str(request.json['temperature']))
+    f.write(str(float(request.json['temperature'])))
     f.close()
     return Response(status=200)
 
