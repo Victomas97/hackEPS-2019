@@ -25,8 +25,16 @@ class controlTemp(Resource):
     def get(self):
         f=open("termostato.txt", "r")
         print(float(f.read()))
+        termostato = float(f.read())
         f2 = open("lastTemperature.txt", "r")
+        lastTemperature = float(f2.read())
         print(float(f2.read()))
+        if termostato == -1:
+            return "nothing"
+        elif lastTemperature > termostato:
+            return "cold"
+        elif lastTemperature < termostato:
+            return "hot"
         return "nothing"
 
 
