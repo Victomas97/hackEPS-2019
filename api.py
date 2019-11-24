@@ -53,9 +53,9 @@ def postTemperature():
 @app.route("/postData", methods=['POST'])
 def postData():
     print(request.json)
-    humity = request.json['humity']
-    temperature = request.json['temperature']
-    time = request.json['time']
+    humity = str(request.json['humity'])
+    temperature = str(request.json['temperature'])
+    time = str(request.json['time'])
     f=open("data.txt", "a+")
     f.write(humity+"\t"+temperature+"\t"+time+"\n")#humity, temperature, time
     f.close()
