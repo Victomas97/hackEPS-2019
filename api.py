@@ -24,9 +24,9 @@ class getAllData(Resource):
 class controlTemp(Resource):
     def get(self):
         f=open("termostato.txt", "r")
-        print(int(f.read()))
+        print(float(f.read()))
         f2 = open("lastTemperature.txt", "r")
-        print(int(f2.read()))
+        print(float(f2.read()))
         return "nothing"
 
 
