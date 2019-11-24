@@ -32,7 +32,7 @@ class controlTemp(Resource):
         print(lastTemperature)
         print(termostato)
 
-        if termostato == "-1":
+        if termostato == "-1.0":
             return "nothing"
         elif lastTemperature > termostato:
             return "cold"
