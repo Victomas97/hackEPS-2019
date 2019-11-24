@@ -29,6 +29,8 @@ class controlTemp(Resource):
         lastTemperature = f2.read()
         f.close()
         f2.close()
+        print(lastTemperature)
+        print(termostato)
 
         if termostato == "-1":
             return "nothing"
