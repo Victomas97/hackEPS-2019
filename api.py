@@ -45,7 +45,7 @@ def postTemperatura():
 
 @app.route("/postData", methods=['POST'])
 def postData():
-    print(request.json)
+    print(str(request.json.temperatura))
     f=open("data.txt", "a+")
     f.write("holaaaa")
     f.close()
