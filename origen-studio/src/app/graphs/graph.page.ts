@@ -39,7 +39,6 @@ export class GraphPage {
 
     this.restProvider.getTemperature().subscribe((data: any) => {
       data.data.map((temperatureData: any) => {
-        console.log(temperatureData);
         this.temperatureData.push(temperatureData.temperature)
         this.temperatureHumityData.push(temperatureData.humity)
         this.temperatureTimeData.push(temperatureData.time)
@@ -53,12 +52,7 @@ export class GraphPage {
 
   }
 
-  ionViewDidEnter() {
-
-  }
-
   createTemperatureChart() {
-    console.log(this.temperatureData);
     this.bars = new Chart(this.barChart.nativeElement, {
       type: 'line',
       data: {

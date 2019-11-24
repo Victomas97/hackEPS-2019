@@ -16,7 +16,6 @@ export class RestProvider {
     }
 
     postTemperature(temperature: number) {
-        console.log(temperature);
         const url = this.baseUrl + '/postTemperature';
         const body = {
             temperature
