@@ -49,6 +49,10 @@ def postData():
     f=open("data.txt", "a+")
     f.write("holaaaa")
     f.close()
+    
+    rw = open("lastTemperature.txt", "w+")
+    rw.write(str(request.json['temperature']))
+    rw.close()
     return Response(status=200)
 
 api.add_resource(getAllData, '/getAllData')
