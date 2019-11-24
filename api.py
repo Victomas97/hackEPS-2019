@@ -24,7 +24,7 @@ class getAllData(Resource):
 @app.route("/postData", methods=['POST'])
 def postData():
     print(request.json)
-    f=open("data.json", "a+")
+    f=open("data.txt", "a+")
     f.write("holaaaa")
     f.close()
     return Response(status=200)
