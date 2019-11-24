@@ -24,11 +24,14 @@ class getAllData(Resource):
 class controlTemp(Resource):
     def get(self):
         f=open("termostato.txt", "r")
-        print(f.read())
         termostato = f.read()
         f2 = open("lastTemperature.txt", "r")
         lastTemperature = f2.read()
-        print(f2.read())
+        f.close()
+        f2.close()
+        print(lastTemperature)
+        print(termostato)
+        
         if termostato == "-1":
             return "nothing"
         elif lastTemperature > termostato:
