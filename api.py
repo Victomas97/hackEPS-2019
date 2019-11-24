@@ -25,7 +25,7 @@ class getAllData(Resource):
 def postData():
     print(request.json)
     f=open("data.json", "a+")
-    f.write(request.json)
+    f.write("holaaaa")
     return Response(status=200)
 
 api.add_resource(getAllData, '/getAllData')
