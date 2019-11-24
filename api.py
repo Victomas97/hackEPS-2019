@@ -9,6 +9,10 @@ api = Api(app)
 '''[]@\ '''
 class getAllData(Resource):
     def get(self):
+        f = open('data.txt')
+        while(l = f.readline()):
+            print(l)
+            
         return {"data":[
                     {"temperature":29,
                     "humity": 50,
