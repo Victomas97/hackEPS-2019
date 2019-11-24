@@ -54,7 +54,7 @@ def postTemperature():
 def postData():
     print(request.json)
     f=open("data.txt", "a+")
-    f.write("holaaaa")
+    f.write("holaaaa\tyuhuu\tbye\n")
     f.close()
 
     rw = open("lastTemperature.txt", "w+")
