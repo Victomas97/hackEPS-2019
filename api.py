@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-'''[]@'''
+'''[]@\ '''
 class getAllData(Resource):
     def get(self):
         return {"data":[
@@ -53,6 +53,9 @@ def postTemperature():
 @app.route("/postData", methods=['POST'])
 def postData():
     print(request.json)
+    print(request.json['humity'])
+    print(request.json['temperature'])
+    print(request.json['time'])
     f=open("data.txt", "a+")
     f.write("holaaaa\tyuhuu\tbye\n")
     f.close()
