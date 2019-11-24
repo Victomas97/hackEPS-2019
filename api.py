@@ -37,7 +37,7 @@ class controlTemp(Resource):
 
 @app.route("/postTemperatura", methods=['POST'])
 def postTemperatura():
-    print(request.json)
+    print(request.json['temperatura'])
     f=open("termostato.txt", "w+")
     f.write(str(request.json.temperatura))
     f.close()
