@@ -21,6 +21,28 @@ class getAllData(Resource):
                     "time":"09:30"},
                 ]}
 
+class controlTemp(Resource):
+    def get(self):
+        return {"data":[
+                    {"temperature":29,
+                    "humity": 50,
+                    "time":"07:30"},
+                    {"temperature":25,
+                    "humity": 80,
+                    "time":"08:30"},
+                    {"temperature":20,
+                    "humity": 20,
+                    "time":"09:30"},
+                ]}
+
+@app.route("/postTemperatura", methods=['POST'])
+def postData():
+    print(request.json)
+    f=open("termostato.txt", "w+")
+    f.write(request.json)
+    f.close()
+    return Response(status=200)
+
 @app.route("/postData", methods=['POST'])
 def postData():
     print(request.json)
@@ -30,6 +52,7 @@ def postData():
     return Response(status=200)
 
 api.add_resource(getAllData, '/getAllData')
+api.add_resource(controlTemp, '/controlTemp')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
