@@ -1,0 +1,7 @@
+{
+  "name": "origen-studio",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

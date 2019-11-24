@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Sensor Flow
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-item>
+      <ion-input [(ngModel)]="username" placeholder="Nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="password" type="password" placeholder="Contrassenya"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="login()">Entrar</ion-button>
+  </div>
+</ion-content>

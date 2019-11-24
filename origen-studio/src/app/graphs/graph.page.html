@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Temperatura {{lastTemperature}}º</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barChart></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Humitat {{lastHumity}}%</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barChart2></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Regular Temperatura</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input (change)="changer()" type="number" (ionChange)="change()" [(ngModel)]="currentTemperature" placeholder="24º"></ion-input>
+      <div class="d-flex">
+        <ion-button class="f-grow" expand="block" (click)="postTemperature(1)">Enviar</ion-button>
+        <ion-button class="f-grow" expand="block" (click)="postTemperature(-1)">Stop</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
