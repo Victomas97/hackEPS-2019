@@ -11,6 +11,7 @@ class getAllData(Resource):
     def get(self):
         data = []
         with open('data.txt') as f:
+            line = f.readline()
             while line:
                 line = f.readline()
                 h = line.split("\t")
