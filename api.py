@@ -9,22 +9,15 @@ api = Api(app)
 '''[]@\ '''
 class getAllData(Resource):
     def get(self):
+        data = {}
         with open('data.txt') as f:
             for line in f:
                 nextLine = next(f)
-                print(nextLine)
-
-        return {"data":[
-                    {"temperature":29,
-                    "humity": 50,
-                    "time":"07:30"},
-                    {"temperature":25,
-                    "humity": 80,
-                    "time":"08:30"},
-                    {"temperature":20,
-                    "humity": 20,
-                    "time":"09:30"},
-                ]}
+                h = nextLine.split("\t")
+                data['humity'] = h[0]
+                data['temperature'] = h[1]
+                data['humity'] = h[2].split(" ")[1][:-8]
+        return data
 
 class controlTemp(Resource):
     def get(self):
