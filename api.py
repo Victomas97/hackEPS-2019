@@ -26,6 +26,7 @@ def postData():
     print(request.json)
     f=open("data.json", "a+")
     f.write("holaaaa")
+    f.close()
     return Response(status=200)
 
 api.add_resource(getAllData, '/getAllData')
