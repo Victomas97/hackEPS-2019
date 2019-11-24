@@ -9,8 +9,11 @@ api = Api(app)
 '''[]@\ '''
 class getAllData(Resource):
     def get(self):
-        f = open('data.txt')
-        while(l == f.readline()):
+        with open('data.txt') as f:
+            for line in f:
+                nextLine = next(f)
+                print(nextLine)
+
             print(l)
 
         return {"data":[
