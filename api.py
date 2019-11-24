@@ -13,15 +13,13 @@ class getAllData(Resource):
         with open('data.txt') as f:
             line = f.readline()
             while line:
-                line = f.readline()
                 h = line.split("\t")
                 t = {}
                 t['humity'] = h[0]
                 t['temperature'] = h[1]
                 t['time'] = h[2].split(" ")[1][:-8]
                 data.append(t)
-                line = fp.readline()
-
+                line = f.readline()
         print(data)
         return {"data": data}
 
