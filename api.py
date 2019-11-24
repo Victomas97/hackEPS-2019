@@ -7,6 +7,16 @@ CORS(app)
 api = Api(app)
 
 '''[]@\ '''
+class getLast (Resource):
+    def get(self):
+        f = open("lastTemperature.txt", "r")
+        lastTemperature = f.read()
+        f.close()
+        f2 = open("lastHumity.txt", "r")
+        lastHumity = f2.read()
+        f2.close()
+        return {"temperature": lastTemperature, "humity": lastHumity}
+
 class getAllData(Resource):
     def get(self):
         data = []
@@ -66,8 +76,12 @@ def postData():
     rw = open("lastTemperature.txt", "w+")
     rw.write(str(request.json['temperature']))
     rw.close()
+    rs = open("lastHumity.txt", "w+")
+    rs.write(str(request.json['humity']))
+    rs.close()
     return Response(status=200)
 
+api.add_resource(getLast, '/getLast')
 api.add_resource(getAllData, '/getAllData')
 api.add_resource(controlTemp, '/controlTemp')
 
