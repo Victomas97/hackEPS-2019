@@ -53,6 +53,22 @@ class controlTemp(Resource):
             return "hot"
         return "nothing"
 
+class alexa(Resource):
+    def get(self):
+        f2 = open("lastTemperature.txt", "r")
+        lastTemperature = f2.read()
+        f2.close()
+        print(lastTemperature)
+        print(request.args.get('temperature'))
+        '''
+        if termostato == "-1.0":
+            return "nothing"
+        elif lastTemperature > termostato:
+            return "cold"
+        elif lastTemperature < termostato:
+            return "hot"
+            '''
+        return "nothing"
 
 
 @app.route("/postTemperature", methods=['POST'])
@@ -84,6 +100,7 @@ def postData():
 api.add_resource(getLast, '/getLast')
 api.add_resource(getAllData, '/getAllData')
 api.add_resource(controlTemp, '/controlTemp')
+api.add_resource(alexa, '/alexa')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
