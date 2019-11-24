@@ -14,8 +14,6 @@ class getAllData(Resource):
                 nextLine = next(f)
                 print(nextLine)
 
-            print(l)
-
         return {"data":[
                     {"temperature":29,
                     "humity": 50,
